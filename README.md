@@ -80,15 +80,49 @@ Link:- https://docs.aws.amazon.com/managedservices/latest/appguide/qs-file-trans
 
 ### After adding the files run the following commands 
 ```
+# To create a image called Mudra from our docker file  
 docker build -t mudra . -f Dockerfile     
 ```
 ```
+# starting the Container
 docker run -dit mudra                     
 ```
 ```
-docker exec -it 46b6bd22cf86 /bin/bash 
+# To start the container
+docker exec -it <container_id> /bin/bash 
 ```
 
+## Command to run main.py file 
+
+```
+# To run for todays date
+python3 main.py --config '{"app_id" : "251803cdbb994fe2813635578dacbd0a","s3_out_location":"s3://pysparkapi/api_response/","s3_error_out_location":"s3://pysparkapi/api_response/"}'
+
+```
+```
+# To run for historical date
+python3 main.py --run_ts '1999-01-06' --config '{"app_id" : "251803cdbb994fe2813635578dacbd0a","s3_out_location":"s3://pysparkapi/api_response/","s3_error_out_location":"s3://pysparkapi/api_response/"}'
+
+```
+
+# To run the Backfill.py file 
+
+```
+python3 backfill.py
+```
+
+# To run Cronjob 
+
+First we have to Register the job in our instance 
+
+```
+# To Register the cronjob
+
+```
+crontab<<EOF
+10 0 * * * main.py --config '{"app_id" : "251803cdbb994fe2813635578dacbd0a","s3_out_location":"s3://pysparkapi/api_response/","s3_error_out_location":"s3://pysparkapi/api_response/"}' > api.log 2>&1
+EOF
+```
 
 
 
