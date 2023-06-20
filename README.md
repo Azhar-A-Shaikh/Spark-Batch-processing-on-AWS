@@ -1,7 +1,7 @@
 # Spark-Batch-processing-on-AWS
 To perform Spark Transformations on bank transactions using a real-time currency ticker API and loading the processed data to Athena using Glue Crawler.
 
-API open exchange rate - to get the API 
+API open exchange rate API - To get the Forex Exchange rates 
 
 
 # AWS instance and connecting to it and then installing docker into it 
@@ -55,9 +55,39 @@ sudo service docker start
 <!-- Add the ec2-user to the docker group so you can execute Docker commands without using sudo. -->
 sudo usermod -a -G docker ec2-user
 ```
+**After this step just relogin into your EC2 instance and You should be able to run the docker commands**
 
+## Creating AWS EMR instance
+* **Note** While Creating the EMR instance make sure to select the key pair of the EC2 instance and also check for the IAM Role for it.
 
+Now our Ec2 user doesnth have access to the cluster directly. To access the hadoop env and spark in our EMR cluster 
 
+* Write the following code to connect with the EMR cluster using SSH connection
+
+```
+ssh -i file.pem username@'Master public DNS of your EMR istanmce'
+```
+
+Then write to get into our HDFS cluster and when you write **pyspark** so you can start and access the spark 
+
+```
+sudo su hadoop
+```
+
+## Adding Our Docker file into the EC2 - docker setup we established earlier 
+
+Link:- https://docs.aws.amazon.com/managedservices/latest/appguide/qs-file-transfer.html
+
+### After adding the files run the following commands 
+```
+docker build -t mudra . -f Dockerfile     
+```
+```
+docker run -dit mudra                     
+```
+```
+docker exec -it 46b6bd22cf86 /bin/bash 
+```
 
 
 
