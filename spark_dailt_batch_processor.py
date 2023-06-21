@@ -17,7 +17,7 @@ from pyspark.sql import SparkSession
 
 spark = SparkSession.builder.appName("Currency Batch Job").getOrCreate()
 
-df_bank_statement = spark.read.parquet("S3 location for parquet file")
+df_bank_statement = spark.read.parquet("s3://pysparkapi/banktxn/parquet/") # Replace the S3 bucket name with your own.
 df_bank_statement = (
     df_bank_statement.withColumn(
         "value_date_formatted",
@@ -35,7 +35,7 @@ df_bank_statement = df_bank_statement.withColumn(
     ),
 )
 
-df_ticker_price_sgd = spark.read.parquet("<S3 bucket which stored the result of main.py>/*/")
+df_ticker_price_sgd = spark.read.parquet("s3://pysparkapi/response/*/") # Here replace you can replace the S3 location with your bucket name. 
 df_bank_statement_null = df_bank_statement.filter("withdrawal_currency is null")
 df_bank_statement_not_null = df_bank_statement.filter("withdrawal_currency is not null")
 
