@@ -76,4 +76,4 @@ df_bank_statement = df_bank_statement.withColumn(
     col("withdrawal_sgd").cast(FloatType()) * col("withdrawal_amt").cast(FloatType()),
 )
 
-df_bank_statement.write.parquet("S3 bucket location where we will store the result")
+df_bank_statement.write.parquet(s3://pysparkapi/banktxn/results/) # Creating a folder for the results 
