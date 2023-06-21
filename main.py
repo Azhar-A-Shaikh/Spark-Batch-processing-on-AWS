@@ -104,8 +104,8 @@ def main():
     config = json.loads(args.config)
     logger.debug("Config: %s", json.dumps(config, indent=2))
     app_id = config["app_id"]
-    s3_out_location = config["s3_out_location"]
-    s3_error_out_location = config["s3_error_out_location"]
+    s3_out_location = config[""s3://pysparkapi/banktxn/response/"]
+    s3_error_out_location = config[""s3://pysparkapi/banktxn/error_error"]
     if args.run_ts == "":  # When no date ie run_ts is mentioned the program will fetch todays date. 
         logger.debug("args.run_ts is not provided, hence taking the current timestamp")
         run_ts = datetime.now()
@@ -140,7 +140,7 @@ def main():
             record, run_date, app_run_ts, year, month
         )
         if len(df_error_details) > 0 and s3_error_out_location != "":
-            s3_out_location = s3_out_location + "error_error/"
+            s3_out_location = s3_out_location + "error/"
             s3_path_currency_error_details = (
                 get_write_location(s3_out_location, run_date)
                 + "/currency_details_sgd_error.parquet"
