@@ -111,12 +111,6 @@ python3 main.py --run_ts '1999-01-06' --config '{"app_id" : "251803cdbb994fe2813
 python3 backfill.py
 ```
 
-# To run Cronjob 
-
-First we have to Register the job in our instance 
-
-```
-
 
 
 
