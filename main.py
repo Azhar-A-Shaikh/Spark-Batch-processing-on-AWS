@@ -1,4 +1,5 @@
 # python3 main.py --config '{"app_id" : "251803cdbb994fe2813635578dacbd0a","s3_out_location":"s3://pysparkapi/api_response/","s3_error_out_location":"s3://pysparkapi/api_response/"}'
+
 import json
 import logging
 import argparse
