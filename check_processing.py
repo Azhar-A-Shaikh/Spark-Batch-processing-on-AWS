@@ -9,7 +9,7 @@ source_df = spark.read.csv("s3://pysparkapi/banktxn/csv/banktxn.csv", header=Tru
 
 # to write into parquet format. 
  
-source_df.write.parquet("s3://pysparkapi/banktxn/parquet")
+source_df.write.parquet("s3://pysparkapi/banktxn/parquet") 
 
 
 
