@@ -1389,7 +1389,7 @@ records = ["2015-01-01",
 "2022-08-20",
 "2022-09-02"]
 for run_date in records:
-    s3_out_location = "s3://pysparkapi/api_response/"
+    s3_out_location = "s3://pysparkapi/api_response/" # Creating a folder which will store the api resposne Results 
     year, month = get_partitions(run_date)
     app_run_ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     app_id = "251803cdbb994fe2813635578dacbd0a" # Get the APP id 
