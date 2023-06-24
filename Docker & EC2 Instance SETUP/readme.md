@@ -89,3 +89,7 @@ docker exec -it <container_id> /bin/bash
 ```
 
 ## After this step we should be able have python running in our EC2 instance
+
+### Once you confirm python is running in your EC2 instance pip install the requirements.txt 
+
+
