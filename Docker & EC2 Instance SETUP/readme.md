@@ -31,24 +31,24 @@ This will help to recognize the host each time you’re trying to connect to you
 **For more info visit this page** :- https://www.clickittech.com/aws/connect-ec2-instance-using-ssh/ 
 
 ## Installing docker into our EC2 instance 
-
+#### Update the packages on your instance
 ```
-#Update the packages on your instance
+
 sudo yum update -y
 ```
 
+Install Docker
 ```
-#Install Docker
 sudo yum install docker -y
 ```
 
+Start the Docker Service
 ```
-#Start the Docker Service
 sudo service docker start
 ```
 
-```
 <!-- Add the ec2-user to the docker group so you can execute Docker commands without using sudo. -->
+```
 sudo usermod -a -G docker ec2-user
 ```
 **After this step just relogin into your EC2 instance and You should be able to run the docker commands**
