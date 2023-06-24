@@ -63,12 +63,12 @@ Now our Ec2 user doesnth have access to the cluster directly. To access the hado
 ```
 ssh -i file.pem username@'Master public DNS of your EMR istanmce'
 ```
-
-Then write to get into our HDFS cluster and when you write **pyspark** so you can start and access the spark 
+## Command to use the cluster as a user
 
 ```
 sudo su hadoop
 ```
+Then write **pyspark** so you can start and access the spark env. 
 
 ## Adding Our Docker file into the EC2 - docker setup we established earlier 
 
@@ -87,3 +87,5 @@ docker run -dit Spark
 # To start the container
 docker exec -it <container_id> /bin/bash 
 ```
+
+## After this step we should be able have python running in our EC2 instance
