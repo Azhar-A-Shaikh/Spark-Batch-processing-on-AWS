@@ -80,11 +80,11 @@ Link:- https://docs.aws.amazon.com/managedservices/latest/appguide/qs-file-trans
 ### After adding the files run the following commands 
 ```
 # To create a image called Spark from our docker file  
-docker build -t Spark . -f Dockerfile     
+docker build -t mudra . -f Dockerfile     
 ```
 ```
 # starting the Container
-docker run -dit Spark                     
+docker run -dit mudra                     
 ```
 ```
 # To start the container
