@@ -5,6 +5,7 @@
 ```
 python backfill.py
 ```
+**Note in this file you will have to change your S3 bucket location**
 
 **This file will Fetch all the Data froom THE API for which the dates are mentioned in the Records list of the CODE**
 
