@@ -77,6 +77,8 @@ Link:- https://docs.aws.amazon.com/managedservices/latest/appguide/qs-file-trans
 ```
 scp -i "spark_key.pem" Dockerfile ec2-user@ec2-13-233-63-152.ap-south-1.compute.amazonaws.com:
 ```
+# Before adding all the code files make sure you have made the necessary changes in your code files example S3 bucket names as per your set up
+
 #### Like this  add all the  required files into your ec2 instance
 
 **Note You need to be in the same  directory as your pem file is stored and need to store all the files which you need to add in the same directory**
