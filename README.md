@@ -74,16 +74,17 @@ sudo su hadoop
 Link:- https://docs.aws.amazon.com/managedservices/latest/appguide/qs-file-transfer.html
 
 ### After adding the files run the following commands 
+#To create a image called Spark from our docker file  
 ```
-# To create a image called Spark from our docker file  
+
 docker build -t mudra . -f Dockerfile     
 ```
+#Starting the Container
 ```
-# starting the Container
 docker run -dit mudra                     
 ```
+#To start the container
 ```
-# To start the container
 docker exec -it <container_id> /bin/bash 
 ```
 
