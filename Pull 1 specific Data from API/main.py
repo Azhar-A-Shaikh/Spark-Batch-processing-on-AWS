@@ -1,4 +1,4 @@
-# python3 main.py --config '{"app_id" : "251803cdbb994fe2813635578dacbd0a","s3_out_location":"s3://pysparkapi/api_response/","s3_error_out_location":"s3://pysparkapi/api_response/"}'
+# python3 main.py --config '{"app_id" : "251803cdbb994fe2813635578dacbd0a","s3_out_location":"s3://py-sparkapi/api_response/","s3_error_out_location":"s3://py-sparkapi/api_response/"}'
 
 import json
 import logging
@@ -104,8 +104,8 @@ def main():
     config = json.loads(args.config)
     logger.debug("Config: %s", json.dumps(config, indent=2))
     app_id = config["app_id"]
-    s3_out_location = config[""s3://pysparkapi/banktxn/response/"] # Creating a folder to store response result for the api
-    s3_error_out_location = config[""s3://pysparkapi/banktxn/error"] # Creating a folder to store the error messages
+    s3_out_location = config[""s3://py-sparkapi/banktxn/response/"] # Creating a folder to store response result for the api
+    s3_error_out_location = config[""s3://py-sparkapi/banktxn/error"] # Creating a folder to store the error messages
     if args.run_ts == "":  # When no date ie run_ts is mentioned the program will fetch todays date. 
         logger.debug("args.run_ts is not provided, hence taking the current timestamp")
         run_ts = datetime.now()
