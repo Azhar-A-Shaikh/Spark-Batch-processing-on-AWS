@@ -1,5 +1,5 @@
 
-## This code is just to check if our connection with EMR is working or now 
+## This code is just to convert our csv file to parquet and store it into S3
 
 from pyspark.sql import SparkSession
 
